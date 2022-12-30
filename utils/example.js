@@ -9,13 +9,17 @@ const merkleTree = new MerkleTree(niceList);
 const root = merkleTree.getRoot();
 
 // find the proof that norman block is in the list 
-const name = 'Norman Block';
-const index = niceList.findIndex(n => n === name);
-const proof = merkleTree.getProof(index);
+let name = 'Norman Block';
+let index = niceList.findIndex(n => n === name);
+let proof = merkleTree.getProof(index);
 
 // verify proof against the Merkle Root
 console.log( verifyProof(proof, name, root) ); // true, Norman Block is in the list!
 
 // TRY IT OUT: what happens if you try a name not in the list, or a fake proof?
+
+name = '0xIntern';
+index = niceList.findIndex(n => n === name);
+proof = merkleTree.getProof(index);
 
 console.log( verifyProof(proof, "0xShah", root) ); // true, Norman Block is in the list!
