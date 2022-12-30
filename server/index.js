@@ -1,6 +1,7 @@
 const express = require('express');
 const verifyProof = require('../utils/verifyProof');
-//hello
+const MerkleTree = require('../utils/MerkleTree');
+const niceList = require('../utils/niceList');
 
 const port = 1225;
 
@@ -9,7 +10,12 @@ app.use(express.json());
 
 // TODO: hardcode a merkle root here representing the whole nice list
 // paste the hex string in here, without the 0x prefix
-const MERKLE_ROOT = '';
+
+
+const merkleTree = new MerkleTree(niceList);
+const root = merkleTree.getRoot();
+const MERKLE_ROOT = root;
+console.log(MERKLE_ROOT);
 
 app.post('/gift', (req, res) => {
   // grab the parameters from the front-end here
