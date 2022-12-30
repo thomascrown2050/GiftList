@@ -22,4 +22,10 @@ name = '0xIntern';
 index = niceList.findIndex(n => n === name);
 proof = merkleTree.getProof(index);
 
-console.log( verifyProof(proof, "0xShah", root) ); // true, Norman Block is in the list!
+console.log( verifyProof(proof, name, root) ); // true, 0xIntern is
+
+name = '0xMakingStuff';
+index = niceList.findIndex(n => n === name);
+proof = merkleTree.getProof(index);
+
+console.log( verifyProof(proof, name, root) ); // false, 0xMakingStuff is not
