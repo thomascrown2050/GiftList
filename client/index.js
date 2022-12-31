@@ -1,3 +1,5 @@
+//12/30/22 - looked at the code a lot but didn't really know what it meant to only store 32 bytes in memory/storage so didn't know what I was trying to achieve; paused.
+
 const axios = require('axios');
 const niceList = require('../utils/niceList.json');
 const MerkleTree = require('../utils/MerkleTree');
